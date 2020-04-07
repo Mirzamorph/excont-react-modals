@@ -1,0 +1,95 @@
+$borderColor: #CDCFD1;
+$textColor: #535B63;
+$blue: #0063B0;
+
+body, html {
+  font-family: Arial, 'Roboto', Helvetica Neue ,Helvetica ,sans-serif; 
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  border: 5px solid $borderColor;
+  padding: 40px 95px;
+  width: 772px;
+  max-width: 100%;
+  box-sizing: border-box;
+  &__title {
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    color: $textColor;
+    margin-bottom: 40px;
+  }
+  &__line {
+    margin-bottom: 40px;
+    border-top: 1px solid #97A1A7;
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    &-space {
+      justify-content: space-between;
+    }
+  }
+  &__btn-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    img {
+      user-select: none;
+    }
+  }
+  &__text {
+    font-size: 15px;
+    color: $textColor;
+    line-height: 20px;
+    p {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.btn {
+  width: 230px;
+  height: 42px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid $blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: $blue;
+  cursor: pointer;
+  transition: 0.3s;
+  &-outline {
+    color: #565656;
+    border: 1px solid $borderColor;
+    background-color: transparent;
+  }
+  &-outline:hover {
+    border-color: $blue;
+    background-color: $blue;
+    color: #fff;
+  }
+}
