@@ -1,7 +1,7 @@
 import React from 'react';
 import closeIcon from '../assets/img/close.svg';
 
-const Modal = ({ children, button }) => {
+const Modal = ({ children, title, button }) => {
   let btnClass = 'btn';
   let actionsClass = 'modal__actions';
   if (button) {
@@ -10,7 +10,7 @@ const Modal = ({ children, button }) => {
   }
   return (
     <div className="modal modal-simple">
-      <h2 className="modal__title">Сообщение: указан неверный E-mail</h2>
+      <h2 className="modal__title">{title}</h2>
       <button type="button" className="modal__btn-close">
         <img src={closeIcon} alt="close modal" />
       </button>
