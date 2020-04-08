@@ -14,15 +14,21 @@ body, html {
 .container {
   display: flex;
   justify-content: center;
-  height: 100vh;
   align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hr {
+  margin: 200px 0;
+  width: 100%;
 }
 
 .modal {
   position: relative;
   border: 5px solid $borderColor;
   padding: 40px 95px;
-  width: 772px;
+  width: 722px;
   max-width: 100%;
   box-sizing: border-box;
   &__title {
