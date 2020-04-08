@@ -10,6 +10,7 @@ function ErrorEmail() {
             Войти
           </button>
         }
+        title="Сообщение: указан неверный E-mail"
       >
         <div className="modal__text">
           <p>
