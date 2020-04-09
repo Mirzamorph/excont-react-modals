@@ -1,12 +1,14 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import Modal from '../Modal';
+import { Checkbox } from '../partials/FormParts';
 
 function ErrorEmail() {
   return (
     <div className="container">
       <Modal
         button={
-          <button type="button" className="btn">
+          <button type="button" className="btn" disabled>
             Войти
           </button>
         }
@@ -28,6 +30,9 @@ function ErrorEmail() {
             повторного письма».
           </p>
         </div>
+        <form>
+          <Checkbox title="Обычный текст" />
+        </form>
       </Modal>
     </div>
   );

@@ -1,9 +1,33 @@
+// Colors
+$bgBlue: #0063B0;
+$formBorder: #F0F0F0;
 $borderColor: #CDCFD1;
-$textColor: #535B63;
-$blue: #0063B0;
+$bgBlocked: #646464;
+$textGray: #535B63;
+$textBlue: #005FAF;
+
+// Font sizes
+@mixin header {
+  font-size: 36px;
+  color: $textGray;
+}
+@mixin text {
+  font-size: 15px;
+  color: $textGray;
+}
+@mixin textLink {
+  font-size: 15px;
+  color: $textBlue;
+}
+@mixin smallHeader {
+  font-size: 20px;
+  color: $textGray;
+}
+
+// styles
 
 body, html {
-  font-family: Arial, 'Roboto', Helvetica Neue ,Helvetica ,sans-serif; 
+  font-family: 'Roboto';//, Helvetica Neue ,Helvetica ,sans-serif; 
 }
 * {
   margin: 0;
@@ -32,10 +56,9 @@ body, html {
   max-width: 100%;
   box-sizing: border-box;
   &__title {
-    font-size: 20px;
+    @include smallHeader;
     font-weight: normal;
     text-align: center;
-    color: $textColor;
     margin-bottom: 40px;
   }
   &__line {
@@ -63,7 +86,7 @@ body, html {
   }
   &__text {
     font-size: 15px;
-    color: $textColor;
+    color: $textGray;
     line-height: 20px;
     p {
       margin-bottom: 30px;
@@ -82,20 +105,96 @@ body, html {
   align-items: center;
   font-size: 18px;
   color: #fff;
-  border: 1px solid $blue;
+  border: 1px solid $bgBlue;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: $blue;
+  background-color: $bgBlue;
   cursor: pointer;
   transition: 0.3s;
+  &:disabled {
+    border-color: #CDCFD1 !important;
+    background-color: #DBE2E6 !important;
+    color: #97A1A7 !important;
+    cursor: not-allowed;
+  }
+  &:hover {
+    background-color: #023E83;
+    border-color: #023E83;
+  }
+  &:active {
+    background-color: #002957;
+    border-color: #002957; 
+  }
   &-outline {
     color: #565656;
     border: 1px solid $borderColor;
     background-color: transparent;
   }
   &-outline:hover {
-    border-color: $blue;
-    background-color: $blue;
-    color: #fff;
+    border-color: #CDCFD1;
+    background-color: #F5F5F5;
+    color: #3C3C3C;
+  }
+  &-outline:active {
+    background-color: #E0E0E0;
+    border-color: #CDCFD1;
+    color: #000000;
+  }
+}
+
+.form-field {
+  display: flex;
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+  &__title {
+    @include text;
+  }
+}
+
+.field-checkbox {
+  position: relative;
+  display: inline;
+  input {
+    opacity: 0;
+    &:focus + label {
+      box-shadow: 0 0 0px 5px #DDF1FF;
+      border: none;
+    }
+    &:checked + label {
+      background-color: #6CA9D2;
+      svg {
+        opacity: 1;
+      }
+    }
+    &:disabled + label {
+      background-color: #DBE2E6;
+      border-color: #DBE2E6;
+      svg {
+        opacity: 0;
+      }
+    }
+    &:disabled:checked + label svg {
+      opacity: 1;
+      fill: #97A1A7;
+    }
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #6CA9D2;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
   }
 }
