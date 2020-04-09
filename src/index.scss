@@ -112,7 +112,7 @@ body, html {
   cursor: pointer;
   transition: 0.3s;
   &:disabled {
-    border-color: #CDCFD1 !important;
+    border-color: $borderColor !important;
     background-color: #DBE2E6 !important;
     color: #97A1A7 !important;
     cursor: not-allowed;
@@ -131,13 +131,13 @@ body, html {
     background-color: transparent;
   }
   &-outline:hover {
-    border-color: #CDCFD1;
+    border-color: $borderColor;
     background-color: #F5F5F5;
     color: #3C3C3C;
   }
   &-outline:active {
     background-color: #E0E0E0;
-    border-color: #CDCFD1;
+    border-color: $borderColor;
     color: #000000;
   }
 }
@@ -250,5 +250,61 @@ body, html {
       background-color: #6CA9D2;
       opacity: 0;
     }
+  }
+}
+
+.field__input {
+  position: relative;
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  &-error {
+    &:after {
+      content: url(assets/img/input-error.svg);
+      display: block;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 13px;
+      right: 20px;
+    }
+    input {
+      border: 1px solid #DD191D !important;
+    }
+  }
+  input {
+    width: 280px;
+    height: 46px;
+    border: 1px solid $borderColor;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    &:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0px 5px #DDF1FF;
+    }
+    &:not(:placeholder-shown) {
+      & + label {
+        color: #969696;
+        transform: translate(-17px, -15px) scale(0.7);
+      }
+    }
+    &:disabled {
+        background-color: #E9ECEE;
+        color: #576472;
+        & + label {
+          color: #576472;
+        }
+    }
+  }
+  label {
+    position: absolute;
+    top: 12px;
+    left: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    color: $textGray;
+    transition: transform 0.4s;
   }
 }

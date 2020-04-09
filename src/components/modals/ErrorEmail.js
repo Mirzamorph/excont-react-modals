@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import Modal from '../Modal';
-import { Checkbox, RadioButton } from '../partials/FormParts';
+import { Checkbox, RadioButton, InputText } from '../partials/FormParts';
 
 function ErrorEmail() {
   return (
@@ -31,7 +31,7 @@ function ErrorEmail() {
           </p>
         </div>
         <form>
-          <RadioButton title="Обычный текст" />
+          <InputText placeholder="Обычный текст" />
         </form>
       </Modal>
     </div>

@@ -38,11 +38,14 @@ export const RadioButton = ({ title, ...props }) => (
   </div>
 );
 
-export const InputText = ({ label }) => (
+// Я сделал плейсхолдер выезжающим с помощью селектора :not(:placeholder-shown)
+// В идеале нужно сделать при клике, но так как я не знаю, как все это
+// будет интегрироваться, я решил, что так оставить лучше
+export const InputText = ({ placeholder, title, error }) => (
   <div className="form-field">
-    <div className="form-field__input">
-      <input id={label} type="text" />
-      <label htmlFor={label} />
+    <div className="form-field__input field__input">
+      <input id={placeholder} type="text" placeholder=" " disabled />
+      <label htmlFor={placeholder}>{placeholder}</label>
     </div>
   </div>
 );
