@@ -26,3 +26,13 @@ export const Checkbox = ({ title, ...props }) => (
     {title && <div className="form-field__title">{title}</div>}
   </div>
 );
+
+export const RadioButton = ({ title, ...props }) => (
+  <div className="form-field">
+    <div className="form-field__radio field-radio">
+      <input id="input" type="radio" {...props} />
+      <label htmlFor="input" />
+    </div>
+    {title && <div className="form-field__title">{title}</div>}
+  </div>
+);

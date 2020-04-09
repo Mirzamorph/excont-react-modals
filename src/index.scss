@@ -144,9 +144,8 @@ body, html {
 
 .form-field {
   display: flex;
-  &__checkbox {
-    width: 20px;
-    height: 20px;
+  &__checkbox,
+  &__radio {
     margin-right: 15px;
   }
   &__title {
@@ -156,7 +155,9 @@ body, html {
 
 .field-checkbox {
   position: relative;
-  display: inline;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   input {
     opacity: 0;
     &:focus + label {
@@ -196,5 +197,58 @@ body, html {
     box-sizing: border-box;
     border-radius: 4px;
     cursor: pointer;
+  }
+}
+
+.field-radio {
+  position: relative;
+  display: inline;
+  input {
+    opacity: 0;
+    &:focus:not(:checked) + label {
+      box-shadow: 0 0 0px 5px #DDF1FF;
+      border: none;
+    }
+    &:checked + label {
+      border-width: 3px;
+      &:after {
+        opacity: 1;
+      }
+    }
+    &:disabled + label {
+      background-color: #DBE2E6;
+      border-color: #DBE2E6;
+      &:after {
+        opacity: 0;
+      }
+    }
+    &:disabled:checked + label:after {
+      opacity: 1;
+      background-color: #97A1A7;
+    }
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #6CA9D2;
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+    &:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #6CA9D2;
+      opacity: 0;
+    }
   }
 }
