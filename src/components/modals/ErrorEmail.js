@@ -31,7 +31,7 @@ function ErrorEmail() {
           </p>
         </div>
         <form>
-          <RadioButton title="Обычный текст" disabled  />
+          <RadioButton title="Обычный текст" />
         </form>
       </Modal>
     </div>

@@ -4,11 +4,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
+// Временно поставил везде заголовок как идентификатор, чтобы работал label
 export const Checkbox = ({ title, ...props }) => (
   <div className="form-field">
     <div className="form-field__checkbox field-checkbox">
-      <input id="input" type="checkbox" {...props} />
-      <label htmlFor="input">
+      <input id={title} type="checkbox" {...props} />
+      <label htmlFor={title}>
         <svg
           width="13"
           height="10"
@@ -30,9 +31,18 @@ export const Checkbox = ({ title, ...props }) => (
 export const RadioButton = ({ title, ...props }) => (
   <div className="form-field">
     <div className="form-field__radio field-radio">
-      <input id="input" type="radio" {...props} />
-      <label htmlFor="input" />
+      <input id={title} type="radio" {...props} />
+      <label htmlFor={title} />
     </div>
     {title && <div className="form-field__title">{title}</div>}
+  </div>
+);
+
+export const InputText = ({ label }) => (
+  <div className="form-field">
+    <div className="form-field__input">
+      <input id={label} type="text" />
+      <label htmlFor={label} />
+    </div>
   </div>
 );
