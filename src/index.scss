@@ -315,39 +315,56 @@ body, html {
 
 .modal {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 380px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 680px;
   max-width: 100%;
   border: 5px solid $borderColor;
-  padding: 40px 50px;
+  padding: 40px;
   box-sizing: border-box;
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+  }
   &__title {
     @include header;
-    margin-bottom: 10px;
   }
-  &__subtitle {
-    @include text;
-    text-align: center;
-    max-width: 160px;
-    margin-bottom: 60px;
-  }
-  &__icon {
-    margin-bottom: 40px;
+  &__btn-back {
+    display: block;
+    width: 10px;
+    height: 16px;
+    background-color: transparent;
+    border: none;
+    margin-right: 40px;
+    img {
+      user-select: none;
+    }
   }
   &__text {
-    @include text;
-    text-align: center;
+    @include formText;
     margin-bottom: 40px;
   }
-  &__btn {
-    width: 100%;
-    margin-bottom: 20px;
+  &__container {
+    margin: 0 50px;
   }
-  &__link-back-btn {
-    margin-top: 40px;
+  &__radio-block {
+    max-height: 276px;
+    overflow-y: auto;
+    padding: 22px 20px;
+    border: 1px solid $borderColor;
+    & > div {
+      margin-bottom: 22px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__btn-below {
+    display: block;
+    margin: 40px auto 0;
   }
 }
 
