@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import Popup from '../partials/Popup';
+import Popup from './partials/Popup';
 
 function ErrorEmail() {
   return (
