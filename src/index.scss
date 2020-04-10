@@ -9,9 +9,14 @@ $textBlue: #005FAF;
 // Font sizes
 @mixin header {
   font-size: 36px;
+  font-weight: normal;
   color: $textGray;
 }
 @mixin text {
+  font-size: 14px;
+  color: $textGray;
+}
+@mixin formText {
   font-size: 15px;
   color: $textGray;
 }
@@ -24,78 +29,7 @@ $textBlue: #005FAF;
   color: $textGray;
 }
 
-// styles
-
-body, html {
-  font-family: 'Roboto';//, Helvetica Neue ,Helvetica ,sans-serif; 
-}
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.hr {
-  margin: 200px 0;
-  width: 100%;
-}
-
-.modal {
-  position: relative;
-  border: 5px solid $borderColor;
-  padding: 40px 95px;
-  width: 722px;
-  max-width: 100%;
-  box-sizing: border-box;
-  &__title {
-    @include smallHeader;
-    font-weight: normal;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  &__line {
-    margin-bottom: 40px;
-    border-top: 1px solid #97A1A7;
-  }
-  &__actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    &-space {
-      justify-content: space-between;
-    }
-  }
-  &__btn-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    img {
-      user-select: none;
-    }
-  }
-  &__text {
-    font-size: 15px;
-    color: $textGray;
-    line-height: 20px;
-    p {
-      margin-bottom: 30px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
+// elements
 
 .btn {
   width: 230px;
@@ -142,6 +76,13 @@ body, html {
   }
 }
 
+.link-btn {
+  @include textLink;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .form-field {
   display: flex;
   &__checkbox,
@@ -149,7 +90,7 @@ body, html {
     margin-right: 15px;
   }
   &__title {
-    @include text;
+    @include formText;
   }
 }
 
@@ -308,6 +249,158 @@ body, html {
     transition: transform 0.4s;
   }
 }
+
+// styles
+
+
+body, html {
+  font-family: 'Roboto';//, Helvetica Neue ,Helvetica ,sans-serif; 
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hr {
+  margin: 200px 0;
+  width: 100%;
+}
+
+.login-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  max-width: 100%;
+  border: 5px solid $borderColor;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  &__title {
+    @include header;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    @include text;
+    text-align: center;
+    max-width: 160px;
+    margin-bottom: 60px;
+  }
+  &__icon {
+    margin-bottom: 40px;
+  }
+  &__text {
+    @include text;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__link-back-btn {
+    margin-top: 40px;
+  }
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  max-width: 100%;
+  border: 5px solid $borderColor;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  &__title {
+    @include header;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    @include text;
+    text-align: center;
+    max-width: 160px;
+    margin-bottom: 60px;
+  }
+  &__icon {
+    margin-bottom: 40px;
+  }
+  &__text {
+    @include text;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__link-back-btn {
+    margin-top: 40px;
+  }
+}
+
+.popup {
+  position: relative;
+  border: 5px solid $borderColor;
+  padding: 40px 95px;
+  width: 722px;
+  max-width: 100%;
+  box-sizing: border-box;
+  &__title {
+    @include smallHeader;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__line {
+    margin-bottom: 40px;
+    border-top: 1px solid #97A1A7;
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    &-space {
+      justify-content: space-between;
+    }
+  }
+  &__btn-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    img {
+      user-select: none;
+    }
+  }
+  &__text {
+    font-size: 15px;
+    color: $textGray;
+    line-height: 20px;
+    p {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 
 .promt {
   position: relative;
