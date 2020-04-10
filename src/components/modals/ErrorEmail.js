@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import Modal from '../Modal';
-import { Checkbox, RadioButton, InputText } from '../partials/FormParts';
+import Popup from '../Popup';
 
 function ErrorEmail() {
   return (
     <div className="container">
-      <Modal
+      <Popup
         button={
           <button type="button" className="btn" disabled>
             Войти
@@ -30,10 +29,7 @@ function ErrorEmail() {
             повторного письма».
           </p>
         </div>
-        <form>
-          <InputText placeholder="Обычный текст" />
-        </form>
-      </Modal>
+      </Popup>
     </div>
   );
 }

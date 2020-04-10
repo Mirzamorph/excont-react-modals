@@ -1,7 +1,7 @@
 import React from 'react';
 import closeIcon from '../assets/img/close.svg';
 
-const Modal = ({ children, title, button }) => {
+const Popup = ({ children, title, button }) => {
   let btnClass = 'btn';
   let actionsClass = 'modal__actions';
   if (button) {
@@ -26,4 +26,4 @@ const Modal = ({ children, title, button }) => {
   );
 };
 
-export default Modal;
+export default Popup;
