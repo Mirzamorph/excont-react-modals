@@ -24,7 +24,11 @@ export const Checkbox = ({ title, ...props }) => (
         </svg>
       </label>
     </div>
-    {title && <div className="form-field__title">{title}</div>}
+    {title && (
+      <label htmlFor={title} className="form-field__title">
+        {title}
+      </label>
+    )}
   </div>
 );
 
@@ -34,18 +38,27 @@ export const RadioButton = ({ title, ...props }) => (
       <input id={title} type="radio" {...props} />
       <label htmlFor={title} />
     </div>
-    {title && <div className="form-field__title">{title}</div>}
+    {title && (
+      <label htmlFor={title} className="form-field__title">
+        {title}
+      </label>
+    )}
   </div>
 );
 
 // Я сделал плейсхолдер выезжающим с помощью селектора :not(:placeholder-shown)
 // В идеале нужно сделать при клике, но так как я не знаю, как все это
 // будет интегрироваться, я решил, что так оставить лучше
-export const InputText = ({ placeholder, title, error }) => (
+export const InputText = ({ placeholder, tip, error }) => (
   <div className="form-field">
     <div className="form-field__input field__input">
       <input id={placeholder} type="text" placeholder=" " />
       <label htmlFor={placeholder}>{placeholder}</label>
     </div>
+    {tip && (
+      <label htmlFor="placeholder" className="tip">
+        {tip}
+      </label>
+    )}
   </div>
 );
