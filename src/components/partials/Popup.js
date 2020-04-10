@@ -1,5 +1,5 @@
 import React from 'react';
-import closeIcon from '../assets/img/close.svg';
+import closeIcon from '../../assets/img/close.svg';
 
 const Popup = ({ children, title, button }) => {
   let btnClass = 'btn';
@@ -15,7 +15,7 @@ const Popup = ({ children, title, button }) => {
         <img src={closeIcon} alt="close popup" />
       </button>
       <hr className="popup__line" />
-      {children}
+      <div className="popup__text">{children}</div>
       <div className={actionsClass}>
         <button type="button" className={btnClass}>
           Закрыть
