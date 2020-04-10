@@ -1,10 +1,12 @@
 import React from 'react';
 import ErrorEmail from './ErrorEmail';
+import Login from './Login';
 
 const Modals = () => (
   <>
-    <ErrorEmail />
+    <Login />
     <hr className="hr" />
+    <ErrorEmail />
   </>
 );
 
