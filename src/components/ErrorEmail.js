@@ -7,7 +7,7 @@ function ErrorEmail() {
     <div className="container">
       <Popup
         button={
-          <button type="button" className="btn" disabled>
+          <button type="button" className="btn">
             Войти
           </button>
         }
