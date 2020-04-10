@@ -308,3 +308,49 @@ body, html {
     transition: transform 0.4s;
   }
 }
+
+.promt {
+  position: relative;
+  width: 480px;
+  max-width: 100%;
+  padding: 20px 30px 30px 67px;
+  border: 1px solid #DBE2E6;
+  box-sizing: border-box;
+  &:after {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  &-warning {
+    border-top: 6px solid #FFC300;
+    &:after {
+      content: url(assets/img/promt-warning.svg);
+    }
+  }
+  &-danger {
+    border-top: 6px solid #DB4056;
+    &:after {
+      content: url(assets/img/promt-danger.svg);
+    }
+  }
+  &-success {
+    border-top: 6px solid #84BF41;
+    &:after {
+      content: url(assets/img/promt-success.svg);
+    }
+  }
+  &__title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-size: 14px;
+    color: #4C4C4C;
+  }
+}

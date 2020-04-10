@@ -44,7 +44,7 @@ export const RadioButton = ({ title, ...props }) => (
 export const InputText = ({ placeholder, title, error }) => (
   <div className="form-field">
     <div className="form-field__input field__input">
-      <input id={placeholder} type="text" placeholder=" " disabled />
+      <input id={placeholder} type="text" placeholder=" " />
       <label htmlFor={placeholder}>{placeholder}</label>
     </div>
   </div>
