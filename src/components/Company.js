@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from './partials/Modal';
 import Promt from './partials/Promt';
-import { InputText, RadioButton } from './partials/FormParts';
+import { InputText } from './partials/FormParts';
 
 const Company = () => (
   <Modal title="Данные о компании">
