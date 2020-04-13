@@ -6,8 +6,8 @@ import React from 'react';
 
 // Временно поставил везде заголовок как идентификатор, чтобы работал label
 export const Checkbox = ({ title, ...props }) => (
-  <div className="form-field">
-    <div className="form-field__checkbox field-checkbox">
+  <div className="form-field form-field-checkbox">
+    <div className="field-checkbox">
       <input id={title} type="checkbox" {...props} />
       <label htmlFor={title}>
         <svg
@@ -33,8 +33,8 @@ export const Checkbox = ({ title, ...props }) => (
 );
 
 export const RadioButton = ({ title, ...props }) => (
-  <div className="form-field">
-    <div className="form-field__radio field-radio">
+  <div className="form-field form-field-radio">
+    <div className="field-radio">
       <input id={title} type="radio" {...props} />
       <label htmlFor={title} />
     </div>
@@ -50,15 +50,24 @@ export const RadioButton = ({ title, ...props }) => (
 // В идеале нужно сделать при клике, но так как я не знаю, как все это
 // будет интегрироваться, я решил, что так оставить лучше
 export const InputText = ({ placeholder, tip, error, ...props }) => (
-  <div className="form-field">
-    <div className="form-field__input field__input">
+  <div className="form-field form-field-input">
+    <div className="field__input">
       <input id={placeholder} type="text" placeholder=" " {...props} />
       <label htmlFor={placeholder}>{placeholder}</label>
     </div>
     {tip && (
-      <label htmlFor="placeholder" className="tip">
+      <label htmlFor="placeholder" className="form-field__tip">
         {tip}
       </label>
     )}
+  </div>
+);
+
+export const Textarea = ({ placeholder, error, ...props }) => (
+  <div className="form-field">
+    <div className="form-field__input field__input field__textarea">
+      <textarea id={placeholder} type="text" placeholder=" " {...props} />
+      <label htmlFor={placeholder}>{placeholder}</label>
+    </div>
   </div>
 );
