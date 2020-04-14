@@ -579,6 +579,12 @@ body, html {
         width: 100%;
       }
     }
+    &__actions-space {
+      flex-direction: column;
+      .btn {
+        margin-bottom: 15px;
+      }
+    }
   }
   .modal {
     padding: 15px;
@@ -588,6 +594,7 @@ body, html {
     }
     &__header {
       margin-bottom: 35px;
+      font-weight: normal;
     }
     &__promt,
     &__text {
@@ -603,10 +610,15 @@ body, html {
       }
       & > * {
         width: 100%;
+        max-width: initial !important;
+        margin-left: 0 !important;
       }
       .link-btn {
         margin: 0;
       }
+    }
+    &__container {
+      margin: 0 20px;
     }
     &__radio-group {
       margin-left: 0;
@@ -620,5 +632,14 @@ body, html {
     &:after {
       left: 6px;
     }
+  }
+  .login-modal {
+    padding: 15px;
+    &__link-back-btn {
+      margin-top: 20px;
+    }
+  }
+  .btn {
+    width: 100%;
   }
 }
