@@ -658,11 +658,10 @@ body, html {
     padding: 15px;
     border-width: 3px;
     &__title {
-      font-size: 25px;
+      font-size: 24px;
     }
     &__header {
       margin-bottom: 35px;
-      font-weight: normal;
     }
     &__promt,
     &__text {
@@ -670,6 +669,9 @@ body, html {
     }
     &__btn-below {
       margin: 20px auto 0;
+    }
+    &__heading {
+      font-weight: normal;
     }
     &__two-cols {
       flex-direction: column;
@@ -709,5 +711,10 @@ body, html {
   }
   .btn {
     width: 100%;
+  }
+  .field__textarea {
+    textarea {
+      min-height: 80px;
+    }
   }
 }
