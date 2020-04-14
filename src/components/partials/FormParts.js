@@ -49,8 +49,18 @@ export const RadioButton = ({ title, ...props }) => (
 // Я сделал плейсхолдер выезжающим с помощью селектора :not(:placeholder-shown)
 // В идеале нужно сделать при клике, но так как я не знаю, как все это
 // будет интегрироваться, я решил, что так оставить лучше
-export const InputText = ({ placeholder, tip, error, ...props }) => (
-  <div className="form-field form-field-input">
+export const InputText = ({
+  placeholder,
+  tip,
+  error,
+  fullwidth = false,
+  ...props
+}) => (
+  <div
+    className={`form-field form-field-input ${
+      fullwidth ? 'form-field-fullwidth' : ''
+    }`}
+  >
     <div className="field__input">
       <input id={placeholder} type="text" placeholder=" " {...props} />
       <label htmlFor={placeholder}>{placeholder}</label>
@@ -64,8 +74,8 @@ export const InputText = ({ placeholder, tip, error, ...props }) => (
 );
 
 export const Textarea = ({ placeholder, error, ...props }) => (
-  <div className="form-field">
-    <div className="form-field__input field__input field__textarea">
+  <div className="form-field form-field-textarea">
+    <div className="field__input field__textarea">
       <textarea id={placeholder} type="text" placeholder=" " {...props} />
       <label htmlFor={placeholder}>{placeholder}</label>
     </div>

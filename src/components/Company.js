@@ -15,7 +15,7 @@ const Company = () => (
     <InputText placeholder="ИНН" disabled value="7814769285" />
     <InputText placeholder="КПП" disabled value="781401001" />
     <InputText
-      className="class"
+      fullwidth
       placeholder="Краткое название организации"
       disabled
       value="ООО «Компания «ЭксКонт»"
@@ -42,6 +42,9 @@ const Company = () => (
       />
       <InputText placeholder="E-mail адрес" />
     </div>
+    <button type="button" className="btn modal__btn-below" disabled>
+      Далее
+    </button>
   </Modal>
 );
 

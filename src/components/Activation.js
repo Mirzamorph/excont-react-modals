@@ -1,0 +1,43 @@
+import React from 'react';
+import Promt from './partials/Promt';
+import Modal from './partials/Modal';
+import {
+  InputText,
+  Textarea,
+  RadioButton,
+  Checkbox,
+} from './partials/FormParts';
+
+const Activation = () => (
+  <Modal title="Активация учетной записи">
+    <div className="modal__promt">
+      <Promt>
+        Введите код активации из письма, которое было отправлено на e-mail,
+        указанный при регистрации пользователя и нажмите «Активировать учетную
+        запись»
+      </Promt>
+    </div>
+    <div className="modal__two-cols">
+      <InputText placeholder="Код активации" />
+      <button type="button" className="link-btn">
+        &lt; Активировать учетную запись
+      </button>
+    </div>
+    <div className="modal__text">
+      Если вы не получили письмо с кодом активации, вы можете запросить
+      повторную отправку — введите E-mail, который вы указывали при регистрации
+      пользователя и нажмите «Отправить код активации»:
+    </div>
+    <div className="modal__two-cols">
+      <InputText placeholder="E-mail для повторного письма" />
+      <button type="button" className="link-btn">
+        &lt; Отправить код активации
+      </button>
+    </div>
+    <button type="button" className="btn modal__btn-below" disabled>
+      Далее
+    </button>
+  </Modal>
+);
+
+export default Activation;

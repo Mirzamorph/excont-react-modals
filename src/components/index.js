@@ -11,9 +11,15 @@ import AlreadyActivated from './AlreadyActivated';
 import Activated from './Activated';
 import NotConfirmed from './NotConfirmed';
 import CodeSent from './CodeSent';
+import User from './User';
+import Activation from './Activation';
 
 const Modals = () => (
   <>
+    <Activation />
+    <hr className="hr" />
+    <User />
+    <hr className="hr" />
     <Company />
     <hr className="hr" />
     <Signature />
