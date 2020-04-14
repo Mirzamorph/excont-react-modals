@@ -305,6 +305,10 @@ body, html {
   width: 100%;
 }
 
+.no-margin {
+  margin: 0 !important;
+}
+
 .login-modal {
   position: relative;
   display: flex;
@@ -496,6 +500,16 @@ body, html {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+  a {
+    @include textLink;
+    text-decoration: none;
+  }
+  ol {
+    margin-left: 30px;
+    li {
+      padding-left: 5px;
     }
   }
 }

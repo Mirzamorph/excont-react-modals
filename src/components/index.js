@@ -14,9 +14,12 @@ import CodeSent from './CodeSent';
 import User from './User';
 import Activation from './Activation';
 import UserNotActivated from './UserNotActivated';
+import NoUkep from './NoUkep';
 
 const Modals = () => (
   <>
+    <NoUkep />
+    <hr className="hr" />
     <UserNotActivated />
     <hr className="hr" />
     <Activation />
