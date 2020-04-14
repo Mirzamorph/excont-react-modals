@@ -33,12 +33,13 @@ $textBlue: #005FAF;
 
 .btn {
   width: 230px;
-  height: 42px;
+  min-height: 42px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   color: #fff;
+  padding: 10px 20px;
   border: 1px solid $bgBlue;
   border-radius: 4px;
   box-sizing: border-box;
@@ -462,6 +463,16 @@ body, html {
     margin-top: 40px;
     &-space {
       justify-content: space-between;
+    }
+  }
+  & .btn {
+    margin-bottom: 30px;
+  }
+  &__two-cols {
+    display: flex;
+    justify-content: space-between;
+    & .btn {
+      margin-bottom: 0;
     }
   }
   &__btn-close {
