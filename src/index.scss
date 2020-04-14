@@ -561,3 +561,64 @@ body, html {
     color: #4C4C4C;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .popup {
+    padding: 50px 15px 15px;
+    border-width: 3px;
+    &__btn-close {
+      top: 15px;
+      right: 15px;
+    }
+    &__two-cols {
+      flex-direction: column;
+      & > *:first-child {
+        margin-bottom: 15px;
+      }
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+  .modal {
+    padding: 15px;
+    border-width: 3px;
+    &__title {
+      font-size: 25px;
+    }
+    &__header {
+      margin-bottom: 35px;
+    }
+    &__promt,
+    &__text {
+      margin-bottom: 20px;
+    }
+    &__btn-below {
+      margin: 20px auto 0;
+    }
+    &__two-cols {
+      flex-direction: column;
+      & > *:first-child {
+        margin-bottom: 15px !important;
+      }
+      & > * {
+        width: 100%;
+      }
+      .link-btn {
+        margin: 0;
+      }
+    }
+    &__radio-group {
+      margin-left: 0;
+    }
+  }
+  .form-field-input {
+    width: 100%;
+  }
+  .promt {
+    padding: 15px 15px 15px 35px;
+    &:after {
+      left: 6px;
+    }
+  }
+}
