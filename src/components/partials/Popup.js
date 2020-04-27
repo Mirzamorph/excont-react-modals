@@ -1,4 +1,5 @@
 import React from 'react';
+import DxButton from 'devextreme-react/button';
 import closeIcon from '../../assets/img/close.svg';
 
 const Popup = ({ children, title, button }) => {
@@ -17,9 +18,7 @@ const Popup = ({ children, title, button }) => {
       <hr className="popup__line" />
       <div className="popup__text">{children}</div>
       <div className={actionsClass}>
-        <button type="button" className={btnClass}>
-          Закрыть
-        </button>
+        <DxButton className={btnClass}>Закрыть</DxButton>
         {button}
       </div>
     </div>
