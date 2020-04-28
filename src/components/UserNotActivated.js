@@ -1,4 +1,5 @@
 import React from 'react';
+import DxButton from 'devextreme-react/button';
 import Popup from './partials/Popup';
 import { InputText } from './partials/FormParts';
 
@@ -10,16 +11,12 @@ function UserNotActivated() {
         Перейдите на страницу активации и введите код активации, который был
         отправлен на электронную почту, указанную при регистрации:
       </p>
-      <button type="button" className="btn">
-        Активация
-      </button>
+      <DxButton className="btn">Активация</DxButton>
       <p>
         Если письмо с кодом активации не было получено на почту mail@excont.ru,
         нажмите кнопку «Отправить код активации повторно»:
       </p>
-      <button type="button" className="btn">
-        Отправить код активации повторно
-      </button>
+      <DxButton className="btn">Отправить код активации повторно</DxButton>
       <p>
         Возможно, E-mail адрес <b>mail@excont.ru</b> был указан неверно. Если
         это так, измените адрес. Код активации будет отправлен по новому адресу
@@ -27,9 +24,7 @@ function UserNotActivated() {
       </p>
       <div className="popup__two-cols">
         <InputText placeholder="E-mail адрес" value="mail@excont.ru" />
-        <button type="button" className="btn">
-          Изменить E-mail
-        </button>
+        <DxButton className="btn">Изменить E-mail</DxButton>
       </div>
     </Popup>
   );
