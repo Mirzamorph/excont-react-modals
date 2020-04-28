@@ -21,11 +21,11 @@ const Modals = () => (
   <>
     <Activation />
     <hr className="hr" />
-    <Test />
-    <hr className="hr" />
     <NoUkep />
     <hr className="hr" />
     <UserNotActivated />
+    <hr className="hr" />
+    <Test />
     <hr className="hr" />
     <User />
     <hr className="hr" />

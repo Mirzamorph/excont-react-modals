@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { TextBox } from 'devextreme-react';
 
 // Временно поставил везде заголовок как идентификатор, чтобы работал label
 export const Checkbox = ({ title, ...props }) => (
@@ -62,8 +63,13 @@ export const InputText = ({
     }`}
   >
     <div className="field__input">
-      <input id={placeholder} type="text" placeholder=" " {...props} />
-      <label htmlFor={placeholder}>{placeholder}</label>
+      <TextBox
+        id={placeholder}
+        type="text"
+        placeholder={placeholder}
+        {...props}
+      />
+      {/* <label htmlFor={placeholder}>{placeholder}</label> */}
     </div>
     {tip && (
       <label htmlFor="placeholder" className="form-field__tip">
