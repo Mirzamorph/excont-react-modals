@@ -6,7 +6,10 @@ import {
   RadioButton,
   Checkbox,
 } from './partials/FormParts';
-
+const items = {
+  right: true,
+  left: false
+}
 const User = () => (
   <Modal title="Данные о пользователе">
     <div className="modal__heading">Данные о пользователе из УКЭП</div>
@@ -14,23 +17,23 @@ const User = () => (
       fullwidth
       placeholder="Краткое название организации"
       disabled
-      value="ООО «Компания «ЭксКонт»"
+      text="ООО «Компания «ЭксКонт»"
     />
     <Textarea
       placeholder="Полное название организации"
       disabled
-      value="Общество с ограниченной ответственностью «Компания ЭксКонт»"
+      text="Общество с ограниченной ответственностью «Компания ЭксКонт»"
     />
     <InputText
       fullwidth
       placeholder="ФИО"
       disabled
-      value="Петров Иван Андреевич"
+      text="Петров Иван Андреевич"
     />
-    <InputText placeholder="СНИЛС" disabled value="111-345-345 11" />
+    <InputText placeholder="СНИЛС" disabled text="111-345-345 11" />
     <div className="modal__radio-group">
-      <RadioButton title="Данные указаны правильно" name="radio" />
-      <RadioButton title="В данных содержится ошибка" name="radio" />
+      <RadioButton items={items} title="Данные указаны правильно" name="radio" />
+      <RadioButton items={items} title="В данных содержится ошибка" name="radio" />
     </div>
     <div className="modal__heading">Контактные данные пользователя</div>
     <div className="modal__two-cols">
