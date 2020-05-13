@@ -50,6 +50,7 @@ $textBlue: #005FAF;
     .dx-button-content {
       padding: 0;
       line-height: 21px;
+      user-select: none;
     }
     &.dx-state-focused {
       border: 1px solid $bgBlue;
@@ -231,55 +232,64 @@ $textBlue: #005FAF;
 }
 
 .field-radio {
-  position: relative;
-  display: inline;
-  input {
-    opacity: 0;
-    &:focus:not(:checked) + label,
-    &:hover:not(:checked) + label {
-      box-shadow: 0 0 0px 5px #DDF1FF;
-      border: none;
-    }
-    &:checked + label {
-      border-width: 3px;
+  .dx-radiobutton {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+    .dx-radio-value-container {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #6CA9D2;
+      margin-right: 15px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.1s;
       &:after {
-        opacity: 1;
-      }
-    }
-    &:disabled + label {
-      background-color: #DBE2E6;
-      border-color: #DBE2E6;
-      &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #6CA9D2;
         opacity: 0;
       }
     }
-    &:disabled:checked + label:after {
-      opacity: 1;
-      background-color: #97A1A7;
+    &.dx-state-focus,
+    &.dx-state-hover:not(.dx-radiobutton-checked) {
+      .dx-radio-value-container {
+        box-shadow: 0 0 0px 5px #DDF1FF;
+        border: none;
+      }
+    }
+    &.dx-radiobutton-checked {
+      .dx-radio-value-container {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    .dx-item-content {
+      font-size: 15px;
+      color: #535b63;
+      cursor: pointer;
     }
   }
-  label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #6CA9D2;
-    box-sizing: border-box;
-    border-radius: 50%;
-    cursor: pointer;
-    &:after {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #6CA9D2;
-      opacity: 0;
+  .dx-state-disabled {
+    .dx-radio-value-container {
+      background-color: #DBE2E6;
+      border-color: #DBE2E6;
+    }
+    & .dx-radiobutton-checked {
+      .dx-radio-value-container:after {
+        opacity: 1;
+        background-color: #97A1A7;
+      }
     }
   }
 }
@@ -288,7 +298,7 @@ $textBlue: #005FAF;
   position: relative;
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  &-error {
+  .dx-invalid {
     &:after {
       content: url(assets/img/input-error.svg);
       display: block;
@@ -327,6 +337,9 @@ $textBlue: #005FAF;
           color: #576472;
         }
     }
+  }
+  .dx-invalid-message-content {
+    display: none !important;
   }
   textarea {
     width: 100%;

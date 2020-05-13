@@ -15,7 +15,6 @@ import User from './User';
 import Activation from './Activation';
 import UserNotActivated from './UserNotActivated';
 import NoUkep from './NoUkep';
-import Test from './Test';
 
 const Modals = () => (
   <>
@@ -24,8 +23,6 @@ const Modals = () => (
     <NoUkep />
     <hr className="hr" />
     <UserNotActivated />
-    <hr className="hr" />
-    <Test />
     <hr className="hr" />
     <User />
     <hr className="hr" />
