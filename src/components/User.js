@@ -5,11 +5,14 @@ import {
   Textarea,
   RadioButton,
   Checkbox,
-} from './partials/FormParts';
-const items = {
-  right: true,
-  left: false
-}
+  Button,
+} from './partials/components';
+
+export const priorities = [
+  'Данные указаны правильно',
+  'В данных содержится ошибка',
+];
+
 const User = () => (
   <Modal title="Данные о пользователе">
     <div className="modal__heading">Данные о пользователе из УКЭП</div>
@@ -32,8 +35,7 @@ const User = () => (
     />
     <InputText placeholder="СНИЛС" disabled text="111-345-345 11" />
     <div className="modal__radio-group">
-      <RadioButton items={items} title="Данные указаны правильно" name="radio" />
-      <RadioButton items={items} title="В данных содержится ошибка" name="radio" />
+      <RadioButton items={priorities} disabled />
     </div>
     <div className="modal__heading">Контактные данные пользователя</div>
     <div className="modal__two-cols">
@@ -53,9 +55,9 @@ const User = () => (
     <div className="modal__container">
       <Checkbox title="Корректность информации подтверждаю и даю согласие на обработку данных" />
     </div>
-    <button type="button" className="btn modal__btn-below" disabled>
+    <Button className="modal__btn-below" disabled>
       Далее
-    </button>
+    </Button>
   </Modal>
 );
 
