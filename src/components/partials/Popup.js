@@ -1,12 +1,12 @@
 import React from 'react';
-import DxButton from 'devextreme-react/button';
 import closeIcon from '../../assets/img/close.svg';
+import { Button } from './components';
 
 const Popup = ({ children, title, button }) => {
-  let btnClass = 'btn';
+  let btnClass = null;
   let actionsClass = 'popup__actions';
   if (button) {
-    btnClass += ' btn-outline';
+    btnClass = 'btn-outline';
     actionsClass += ' popup__actions-space';
   }
   return (
@@ -18,7 +18,7 @@ const Popup = ({ children, title, button }) => {
       <hr className="popup__line" />
       <div className="popup__text">{children}</div>
       <div className={actionsClass}>
-        <DxButton className={btnClass}>Закрыть</DxButton>
+        <Button className={btnClass}>Закрыть</Button>
         {button}
       </div>
     </div>
