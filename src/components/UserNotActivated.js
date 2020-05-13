@@ -1,7 +1,7 @@
 import React from 'react';
 import DxButton from 'devextreme-react/button';
 import Popup from './partials/Popup';
-import { InputText } from './partials/FormParts';
+import { InputText } from './partials/components';
 
 function UserNotActivated() {
   return (
