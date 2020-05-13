@@ -1,8 +1,17 @@
 import React from 'react';
 import Modal from './partials/Modal';
 import Promt from './partials/Promt';
-import { InputText, Textarea, RadioButton } from './partials/FormParts';
+import {
+  InputText,
+  Textarea,
+  RadioButton,
+  Button,
+} from './partials/components';
 
+export const priorities = [
+  'Данные указаны правильно',
+  'В данных содержится ошибка',
+];
 const Company = () => (
   <Modal title="Данные о компании">
     <div className="modal__promt">
@@ -31,8 +40,7 @@ const Company = () => (
       value="197374, Россия, Санкт-Петербург, Торфяная дорога, д. 7, лит. Ф, оф. 713"
     />
     <div className="modal__radio-group">
-      <RadioButton title="Данные указаны правильно" name="radio" />
-      <RadioButton title="В данных содержится ошибка" name="radio" />
+      <RadioButton items={priorities} />
     </div>
     <div className="modal__heading">Контактные данные организации</div>
     <div className="modal__center-block">
@@ -42,9 +50,9 @@ const Company = () => (
       />
       <InputText placeholder="E-mail адрес" />
     </div>
-    <button type="button" className="btn modal__btn-below" disabled>
+    <Button className="modal__btn-below" disabled>
       Далее
-    </button>
+    </Button>
   </Modal>
 );
 
