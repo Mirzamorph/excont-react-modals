@@ -1,5 +1,6 @@
 import React from 'react';
 import loginIcon from '../assets/img/login-icon.svg';
+import { Button } from './partials/components';
 
 const Login = () => (
   <>
@@ -12,12 +13,8 @@ const Login = () => (
       <div className="login-modal__text">
         Присоедините к компьютеру носитель ключа электронной подписи.
       </div>
-      <button type="button" className="btn login-modal__btn">
-        Вход
-      </button>
-      <button type="button" className="btn login-modal__btn">
-        Регистрация
-      </button>
+      <Button className="login-modal__btn">Вход</Button>
+      <Button className="login-modal__btn">Регистрация</Button>
       <button type="button" className="link-btn login-modal__link-btn">
         Активация
       </button>

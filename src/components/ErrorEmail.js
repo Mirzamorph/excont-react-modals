@@ -1,15 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import Popup from './partials/Popup';
+import { Button } from './partials/components';
 
 function ErrorEmail() {
   return (
     <Popup
-      button={
-        <button type="button" className="btn">
-          Войти
-        </button>
-      }
+      button={<Button>Войти</Button>}
       title="Сообщение: указан неверный E-mail"
     >
       <p>
