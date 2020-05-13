@@ -1,15 +1,12 @@
 import React from 'react';
 import Popup from './partials/Popup';
+import { Button } from './partials/components';
 
 function Activated() {
   return (
     <Popup
       title="Сообщение: учётная запись активирована"
-      button={
-        <button type="button" className="btn">
-          Войти
-        </button>
-      }
+      button={<Button>Войти</Button>}
     >
       <p>
         Учётная запись активирована. Для доступа в систему подключите УКЭП и

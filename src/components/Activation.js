@@ -1,12 +1,7 @@
 import React from 'react';
 import Promt from './partials/Promt';
 import Modal from './partials/Modal';
-import {
-  InputText,
-  Textarea,
-  RadioButton,
-  Checkbox,
-} from './partials/FormParts';
+import { InputText, Button } from './partials/components';
 
 const Activation = () => (
   <Modal title="Активация учетной записи">
@@ -34,9 +29,9 @@ const Activation = () => (
         &lt; Отправить код активации
       </button>
     </div>
-    <button type="button" className="btn modal__btn-below" disabled>
+    <Button className="modal__btn-below" disabled>
       Далее
-    </button>
+    </Button>
   </Modal>
 );
 
