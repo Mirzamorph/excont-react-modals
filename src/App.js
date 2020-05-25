@@ -3,9 +3,6 @@ import Modals from './components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// import 'devextreme/dist/css/dx.common.css';
-// import 'devextreme/dist/css/dx.light.css';
-
 function App() {
   return (
     <>
